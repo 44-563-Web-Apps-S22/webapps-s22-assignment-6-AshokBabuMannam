@@ -1,30 +1,58 @@
 <!DOCTYPE html>
 <html>
- <head>
-     <title>President Page</title>
- </head>
-<body>
+        <head>
+            <title>President Page</title>
+        </head>
 
-<h2>President guess by Ashok Babu Mannam</h2>
-<div class = "container">
-    <form>
-        <label for="form_age">Enter the secret president name </label>
-        <input type ="password" id="form_age" name="form_age" min=10 max=50 step=2 value= "George Washington"> <br>
+        <style>
+            label {
+                display: inline-block;
+                width: 220px;
+            }
+            
+            p {
+                background-color: rgb(98, 80, 255);
+                color: white;
+                display: inline;
+            }
+            
+            p:hover {
+                background-color: rgba(123, 255, 0, 0.712);
+                color: black;
+                display: inline;
+            }
+            
+            h2 {
+                background-color: rgb(136, 18, 63);
+                color: black;
+                display: inline-block;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            </style>
+<body>
+       
+       <h2>President guess by Ashok Babu Mannam</h2>
     
-        <label for="form_nick"> Guess the president </label>
-        <input type ="text" id="form_nick" name="form_nick" autofocus> <br>
-    
-        <input type="button" onclick="checkGuess()" value="Check the guess">
-    </form>
-</div>
-<div class = "container">
-    <p id="result">This text will be replaced </p>
-</div>
-<script> 
-let correct = 0;
-let wrong = 0;
-var cntNew = 0;
-function checkGuess (){
+       <div class = "container">
+        <form>
+            <label for="form_age">Enter the secret president name </label>
+            <input type ="password" id="form_age" name="form_age" min=10 max=50 step=2 value= "George Washington"> <br>
+        
+            <label for="form_nick"> Guess the president </label>
+            <input type ="text" id="form_nick" name="form_nick" autofocus> <br>
+        
+            <input type="button" onclick="checkGuess()" value="Check the guess">
+        </form>
+       </div>
+    <div class = "container">
+        <br>
+        <p id="result">This text will be replaced </p>
+    </div><br>
+    <script> 
+    let correct = 0;
+    let wrong = 0;
+    var cntNew = 0;
+    function checkGuess (){
     console.log("Getting form values")
     password = document.getElementById("form_age").value
     text = document.getElementById("form_nick").value
@@ -43,38 +71,38 @@ function checkGuess (){
         if (cntNew >=3){
             if (wrong >=3){
                 incorrectcheckGuess()
-            }
-        }
-    }
-}
+             }
+         }
+     }
+ }
 function incorrectcheckGuess(){
-    alert("Account Locked")
-}
-</script>
-
-<div>
-    <img src="Accentor, Alpine.PNG" id="im" width="100" height="100" onclick="swapImage()">
-    <script>
-        var useImage=1;
-        function swapImage(){
-            switch(useImage){
-                case 1:
-                document.getElementById('im').src="Magpie Starling.PNG";
-                useImage=2;
-                break;
-                case 2:
-                document.getElementById('im').src="Nightingale.PNG";
-                useImage=3;
-                break;
-                case 3:
-                document.getElementById('im').src="Accentor, Alpine.PNG";
-               useImage=1;
-                break;
-            }
-        }
+    alert("Sorry, game over.")
+    }
     </script>
-
-</div>
+    <br>
+    <div>
+        <img src="olive pigeon.jpg" id="im" width="100" height="100" onclick="swapImage()">
+        <script>
+            var useImage=1;
+            function swapImage(){
+                switch(useImage){
+                    case 1:
+                    document.getElementById('im').src="pheasant cuckoo.jpg";
+                    useImage=2;
+                    break;
+                    case 2:
+                    document.getElementById('im').src="pine grosbeak.jpg";
+                    useImage=3;
+                    break;
+                    case 3:
+                    document.getElementById('im').src="olive pigeon.jpg";
+                   useImage=1;
+                    break;
+                }
+            }
+        </script>
+    
+    </div>
 
 </body>
 </html>
